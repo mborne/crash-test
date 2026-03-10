@@ -1,4 +1,4 @@
-# mborne/debug
+# mborne/crash-test
 
 A buggy application to illustrate Docker and Kubernetes features (mainly auto-restart and limits) :
 

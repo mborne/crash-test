@@ -11,7 +11,7 @@ info:
 #  - url: /
 externalDocs:
   description: GitHub repository
-  url: https://github.com/mborne/debug#readme
+  url: https://github.com/mborne/crash-test#readme
 tags:
   - name: helpers
     description: Provide debug helpers

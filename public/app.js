@@ -44,7 +44,7 @@
     metaVersion.textContent = data.version ?? '—';
     metaArch.textContent = data.arch ?? '—';
     metaColor.textContent = data.color ?? '—';
-    metaColor.classList.remove('has-text-grey-light');
+    metaColor.classList.remove('text-gray-400');
     if (data.color) {
       metaColor.style.backgroundColor = data.color.startsWith('#') ? data.color : '#e8e8e8';
       metaColor.style.border = '1px solid #dbdbdb';
@@ -58,13 +58,13 @@
     metaLeakCount.textContent = data.leaked_buffers_count != null ? String(data.leaked_buffers_count) : '—';
     if (data.stress_cpu === true) {
       metaStressCpu.textContent = 'ON';
-      metaStressCpu.className = 'is-size-6 has-text-warning';
+      metaStressCpu.className = 'text-xl text-amber-600';
     } else if (data.stress_cpu === false) {
       metaStressCpu.textContent = 'OFF';
-      metaStressCpu.className = 'is-size-6 has-text-success';
+      metaStressCpu.className = 'text-xl text-green-600';
     } else {
       metaStressCpu.textContent = '—';
-      metaStressCpu.className = 'is-size-6 has-text-grey-light';
+      metaStressCpu.className = 'text-xl text-gray-400';
     }
   }
 
@@ -83,13 +83,13 @@
       metaMemory.textContent = '—';
       metaLeakCount.textContent = '—';
       metaStressCpu.textContent = '—';
-      metaStressCpu.className = 'is-size-6 has-text-grey-light';
+      metaStressCpu.className = 'text-xl text-gray-400';
     });
   }
 
   function setStatus(ok) {
     metaStatus.textContent = ok ? 'UP' : 'DOWN';
-    metaStatus.className = 'is-size-6 has-text-weight-semibold ' + (ok ? 'has-text-success' : 'has-text-danger');
+    metaStatus.className = 'text-xl font-semibold ' + (ok ? 'text-green-600' : 'text-red-600');
   }
 
   function checkHealth() {
@@ -104,11 +104,11 @@
 
   function showFeedback(ok, message) {
     actionFeedback.textContent = message;
-    actionFeedback.className = 'notification mt-3 ' + (ok ? 'is-success' : 'is-danger');
-    actionFeedback.classList.remove('is-hidden');
+    actionFeedback.className = 'mt-3 p-3 rounded-lg text-lg ' + (ok ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800');
+    actionFeedback.classList.remove('hidden');
     actionFeedback.setAttribute('aria-live', 'polite');
     setTimeout(function () {
-      actionFeedback.classList.add('is-hidden');
+      actionFeedback.classList.add('hidden');
     }, 5000);
   }
 

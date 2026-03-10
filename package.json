@@ -1,6 +1,6 @@
 {
-  "name": "@mborne/debug",
-  "version": "0.3.0",
+  "name": "@mborne/crash-test",
+  "version": "0.4.0",
   "description": "A buggy API to illustrate Docker and Kubernetes features",
   "type": "module",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mborne/debug.git"
+    "url": "git+https://github.com/mborne/crash-test.git"
   },
   "keywords": [
     "debug",
@@ -21,15 +21,17 @@
   "author": "Mickael Borne <mborne@users.noreply.github.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mborne/debug/issues"
+    "url": "https://github.com/mborne/crash-test/issues"
   },
-  "homepage": "https://github.com/mborne/debug#readme",
+  "homepage": "https://github.com/mborne/crash-test#readme",
   "dependencies": {
     "express": "^5.2.1",
-    "winston": "^3.19.0"
+    "winston": "^3.19.0",
+    "qs": ">=6.14.2"
   },
   "devDependencies": {
     "supertest": "^7.2.2",
-    "vitest": "^4.0.18"
+    "vitest": "^4.0.18",
+    "rollup": ">=4.59.0"
   }
 }

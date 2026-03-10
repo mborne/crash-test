@@ -1,7 +1,7 @@
 services:
   debug:
     container_name: debug
-    image: ghcr.io/mborne/debug:master
+    image: ghcr.io/mborne/crash-test:master
     build:
       context: .
       args:
