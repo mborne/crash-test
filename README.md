@@ -2,7 +2,7 @@
 
 A buggy application to illustrate Docker and Kubernetes features (mainly auto-restart and limits) :
 
-![docs/screenshot.png](docs/screenshot.png)
+![docs/screenshot.png](docs/screenshot.png?t=20260315)
 
 ## Parameters
 
