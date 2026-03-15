@@ -17,7 +17,7 @@ A buggy application to illustrate Docker and Kubernetes features (mainly auto-re
 
 ### Usage with docker
 
-See [docker-compose.yml](docker-compose.yml) :
+See [compose.yml](compose.yml) :
 
 ```bash
 # start on http://localhost:3000
