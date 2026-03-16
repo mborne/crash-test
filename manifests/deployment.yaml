@@ -2,20 +2,20 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: debug
-  name: debug
+    app: crash-test
+  name: crash-test
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: debug
+      app: crash-test
   template:
     metadata:
       labels:
-        app: debug
+        app: crash-test
     spec:
       containers:
-      - name: debug
+      - name: crash-test
         image: ghcr.io/mborne/crash-test:latest
         ports:
           - name: http
@@ -34,7 +34,7 @@ spec:
           failureThreshold: 1
           periodSeconds: 1
         env:
-        - name: DEBUG_PORT
+        - name: APP_PORT
           value: '3000'
         - name: LOG_FORMAT
         securityContext:

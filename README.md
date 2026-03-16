@@ -6,12 +6,12 @@ A buggy application to illustrate Docker and Kubernetes features (mainly auto-re
 
 ## Parameters
 
-| Name          | Description                                                                                                                             | Default    |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| `DEBUG_PORT`  | Listening port                                                                                                                          | `3000`     |
-| `DEBUG_COLOR` | A color to illustrates env vars handling and blue/green deployments                                                                     | `null`     |
-| `LOG_FORMAT`  | Log format to illustrate JSON parsing ("simple" or "json")                                                                              | `"simple"` |
-| `LOG_LEVEL`   | [Log level](https://github.com/winstonjs/winston?tab=readme-ov-file#using-logging-levels) ("debug", "verbose", "info", "warn", "error") | `"info"`   |
+| Name         | Description                                                                                                                             | Default    |
+| ------------ | --------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| `APP_PORT`   | Listening port                                                                                                                          | `3000`     |
+| `APP_COLOR`  | A color to illustrates env vars handling and blue/green deployments                                                                     | `null`     |
+| `LOG_FORMAT` | Log format to illustrate JSON parsing ("simple" or "json")                                                                              | `"simple"` |
+| `LOG_LEVEL`  | [Log level](https://github.com/winstonjs/winston?tab=readme-ov-file#using-logging-levels) ("debug", "verbose", "info", "warn", "error") | `"info"`   |
 
 ## Usage
 

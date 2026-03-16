@@ -1,6 +1,6 @@
 {
   "name": "@mborne/crash-test",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "A buggy API to illustrate Docker and Kubernetes features",
   "type": "module",
   "scripts": {

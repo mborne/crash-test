@@ -1,6 +1,6 @@
 import { hostname, arch } from 'os';
 
-const color = process.env.DEBUG_COLOR ? process.env.DEBUG_COLOR : null;
+const color = process.env.APP_COLOR ? process.env.APP_COLOR : null;
 
 /**
  * Provides hostname, version, arch and color to illustrate version upgrade / downgrade.
