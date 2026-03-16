@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: debug
-        image: ghcr.io/mborne/crash-test:v0.4.0
+        image: ghcr.io/mborne/crash-test:latest
         ports:
           - name: http
             containerPort: 3000
