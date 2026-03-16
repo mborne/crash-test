@@ -1,0 +1,49 @@
+name: Helm Chart OCI
+
+on:
+  push:
+    branches: [ "master" ]
+    tags: [ 'v*.*.*' ]
+  pull_request:
+    branches: [ "master" ]
+
+env:
+  REGISTRY: ghcr.io
+  OCI_REF: oci://ghcr.io/${{ github.repository_owner }}/helm-crash-test
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Helm
+        uses: azure/setup-helm@v3
+        with:
+          version: "v3.14.0"
+
+      - name: Get chart version
+        id: version
+        run: |
+          echo "chart-version=$(helm show chart charts/crash-test -o json | jq -r .version)" >> $GITHUB_OUTPUT
+
+      - name: Log into registry ${{ env.REGISTRY }}
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Package chart
+        run: helm package charts/crash-test
+
+      - name: Push chart to OCI registry
+        if: github.event_name != 'pull_request'
+        run: |
+          helm push crash-test-${{ steps.version.outputs.chart-version }}.tgz ${{ env.OCI_REF }}
