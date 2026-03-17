@@ -53,6 +53,8 @@ securityContext:
   allowPrivilegeEscalation: false
   privileged: false
 
+# This is the port the container will listen on.
+containerPort: 3000
 
 # This is for setting up a service more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/
 service:
