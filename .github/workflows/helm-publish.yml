@@ -46,4 +46,4 @@ jobs:
       - name: Push chart to OCI registry
         if: github.event_name != 'pull_request'
         run: |
-          helm push crash-test-${{ steps.version.outputs.chart-version }}.tgz ${{ env.OCI_REF }}
+          helm push crash-test-*.tgz ${{ env.OCI_REF }}
